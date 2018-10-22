@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{mainpage.title}"></title>
+    <link rel="stylesheet" th:href="@{/css/hamster.css}" href="../static/css/hamster.css">
+</head>
+<body>
+<div class="row">
+    <nav class="col-sm-12">
+        <div class="col-sm-2">
+            <div class="nav">MÓKUS!</div>
+        </div>
+        <div class="col-sm-2">
+            <div class="nav">Kezdőlap</div>
+        </div>
+        <div class="col-sm-2">
+            <div class="product" th:text="#{main.product}">termék
+                <div class="productstuff">
+                    <a th:text="#{main.product.insert}">termék felvétel</a>
+                    <a th:text="#{main.product.update}">termék módosítás </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <div class="shelf" th:text="#{main.shelf}">polc
+                <div class="shelfstuff">
+                    <a th:text="#{main.shelf.insert}">polc felvétel</a>
+                    <a th:text="#{main.shelf.update}">polc módosítás </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <div class="pallet" th:text="#{main.pallet}">áru
+                <div class="palletstuff">
+                    <a th:text="#{main.pallet.insert}">árurendelés</a>
+                    <a th:text="#{main.pallet.update}">árukiadás </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <div class="nav">Statiszitka</div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

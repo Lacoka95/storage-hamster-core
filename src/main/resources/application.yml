@@ -1,8 +1,25 @@
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    env:
-      enabled: true
+#logging:
+#  level:
+#    root=info
+#logging.level.hu.storagehamster.www=debug
+
+logging:
+  level:
+    hu:
+      storagehamster:
+        www: DEBUG
+    org:
+      hibernate: ERROR
+
+
+spring:
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
