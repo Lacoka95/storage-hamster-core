@@ -26,12 +26,16 @@ public class ShelfService {
 		return shelfRepository.findByLoco(loco);
 	}
 
+	public void deleteByLoco(String loco) {
+		shelfRepository.deleteByLoco(loco);
+	}
+
 	public void storePallet(Pallet pallet, Shelf shelf) throws ShelfOutOfCapacityException {
 		if (shelf.getCapacity() >= 1) {
 			shelf.addPallet(pallet);
 			shelf.setCapacity(shelf.getCapacity() - 1);
 		} else {
-			throw new ShelfOutOfCapacityException("Shelf has no more free space");
+			throw new ShelfOutOfCapacityException("shelf has no more free space");
 		}
 	}
 

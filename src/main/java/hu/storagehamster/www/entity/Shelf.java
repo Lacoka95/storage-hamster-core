@@ -59,7 +59,7 @@ public class Shelf {
 
 	@Override
 	public String toString() {
-		return "Shelf{" +
+		return "shelf{" +
 						"loco='" + loco + '\'' +
 						", capacity=" + capacity +
 						", stroredPallets=" + stroredPallets +

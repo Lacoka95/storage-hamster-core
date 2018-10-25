@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 @Service
 public class InflowHandler {
@@ -26,12 +27,15 @@ public class InflowHandler {
 	}
 
 	public void handleInflow(Inflow inflow) throws ShelfOutOfCapacityException {
-
 		Shelf shelf = shelfService.findByLoco(inflow.getShelfId());
-
 		Product product = productService.findById(inflow.getProductId());
 
-		Pallet pallet = new Pallet(inflow.getQuantity(), product);
+		IntStream.rangeClosed(0, inflow.getNumberOfPallets())
+						.forEach(i -> storeShelf(inflow, shelf, product));
+	}
+
+	public void storeShelf(Inflow inflow, Shelf shelf, Product product) {
+		Pallet pallet = new Pallet(inflow.getNumberOfProductsOnPallet(), product);
 		palletService.save(pallet);
 
 		shelfService.storePallet(pallet, shelf);

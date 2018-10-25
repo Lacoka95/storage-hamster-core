@@ -1976,16 +1976,22 @@ hr {
     display: none !important;
   }
 }
+html{
+background-color: #D4966A;
+}
 .col-sm-2 {
 	padding:0;
 	margin:0px,0px,0px,0px;
 	border:0px,0px,0px,0px;
-	}
+}
+
 .nav{
 	background-color:#8d5b41;
 	 margin: auto;
     border: 1px solid black;
 	font-size:2em;
+	text-align:center;
+
 	
 }
 .nav:hover{
@@ -1996,12 +2002,8 @@ h1{
 	font-size: 1,5em;
 	color:
 }
-nav{
-	text-align:center;
-	
-}
 .product{
-	font-size:2em;
+	font-size:1em;
 	background-color:#8d5b41;
 	 margin: auto;
     border: 1px solid black;
@@ -2042,7 +2044,7 @@ display : block;
 	background-color:#8d5b41;
 	 margin: auto;
     border: 1px solid black;
-	font-size:2em;
+	font-size:1em;
 }
 .shelf:hover{
 background-color: #996633;
@@ -2075,7 +2077,7 @@ display : block;
 	background-color:#8d5b41;
 	 margin: auto;
     border: 1px solid black;
-	font-size:2em;
+	font-size:1em;
 }
 .pallet :hover{
 background-color : #996633;
@@ -2084,24 +2086,31 @@ background-color : #996633;
 display: none;
     position: relative;
     background-color:  #c68c53;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 .palletstuff a {
 	 float: none;
     color: black;
-    padding: 12px 16px;
+   padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
 }
-.palletstuff a:hover{
+.palletstuff a :hover{
 background-color: #d9b38c;
-    color: black;
-	
-	
-}
+color: black;
+padding: 12px 16px;
+ }
+
 .pallet:hover .palletstuff{
 display : block;
 }
+a {
+ text-decoration : none;
+ color : black;
+ text-align:center;
+ }
+ .fromErrorMessage{
+    color: red;
+ }

@@ -15,4 +15,5 @@ public interface ShelfRepository extends JpaRepository<Shelf, String> {
 
 	Shelf findByLoco(String loco);
 
+	public void deleteByLoco(String loco);
 }

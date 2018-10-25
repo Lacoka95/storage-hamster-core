@@ -5,12 +5,13 @@ public class Inflow {
 	private int id;
 	private String shelfId;
 	private long productId;
-	private int quantity;
+	private int numberOfProductsOnPallet;
+	private int numberOfPallets;
 
-	public Inflow(String shelfId, long productId, int quantity) {
+	public Inflow(String shelfId, long productId, int numberOfProductsOnPallet) {
 		this.shelfId = shelfId;
 		this.productId = productId;
-		this.quantity = quantity;
+		this.numberOfProductsOnPallet = numberOfProductsOnPallet;
 	}
 
 	public Inflow() {
@@ -32,12 +33,20 @@ public class Inflow {
 		this.productId = productId;
 	}
 
-	public int getQuantity() {
-		return quantity;
+	public int getNumberOfProductsOnPallet() {
+		return numberOfProductsOnPallet;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setNumberOfProductsOnPallet(int numberOfProductsOnPallet) {
+		this.numberOfProductsOnPallet = numberOfProductsOnPallet;
+	}
+
+	public int getNumberOfPallets() {
+		return numberOfPallets;
+	}
+
+	public void setNumberOfPallets(int numberOfPallets) {
+		this.numberOfPallets = numberOfPallets;
 	}
 
 	@Override
@@ -46,7 +55,8 @@ public class Inflow {
 						"id=" + id +
 						", shelfId='" + shelfId + '\'' +
 						", productId=" + productId +
-						", quantity=" + quantity +
+						", numberOfProductsOnPallet=" + numberOfProductsOnPallet +
+						", numberOfPallets=" + numberOfPallets +
 						'}';
 	}
 }
