@@ -3,49 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title th:text="#{management.shelf.title}"></title>
-    <link rel="stylesheet" th:href="@{/css/hamster.css}" href="../static/css/hamster.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/hamster.css}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script  rel="text/javascript"  th:src="@{/js/hamster.js}"></script>
 </head>
 <body>
 <div class="row">
-<nav class="col-sm-12">
-    <div class="col-sm-2">
-        <div class="nav">MÓKUS!</div>
-    </div>
-    <div class="col-sm-2">
-        <div class="nav" ><a th:href="@{../home}" target="_self"><span th:text="#{nav.home}" >Kezdőlap</span></a></div>
-    </div>
-    <div class="col-sm-2">
-        <div class="product" ><span th:text="#{nav.product}"></span>
-            <div class="productstuff">
-                <a  th:href="@{product}" target="_self"> <span  th:text="#{nav.product.insert}" >termék felvétel</span></a>
-                <!--<a th:text="#{nav.product.update}">termék módosítás </a>-->
+    <nav class="col-sm-12">
+        <div class="col-sm-2">
+            <div class="nav">MÓKUS!</div>
+        </div>
+        <div class="col-sm-2">
+            <div class="nav"><a th:href="@{~/home}" target="_self"><span th:text="#{nav.home}">Kezdőlap</span></a>
             </div>
         </div>
-    </div>
-
-    <div class="col-sm-2">
-        <div class="shelf" ><span  th:text="#{nav.shelf}"></span>
-            <div class="shelfstuff">
-                <a  th:href="@{shelf}" target="_self"><span  th:text="#{nav.shelf.insert}"></span></a>
-                <a th:text="#{nav.shelf.update}"></a>
+        <div class="col-sm-2">
+            <div class="product"><span th:text="#{nav.product}"></span>
+                <div class="productstuff">
+                    <a th:href="@{../product/insert}" target="_self"> <span th:text="#{nav.product.insert}">termék felvétel</span></a>
+                    <a th:href="@{../product/update}" target="_self"><span th:text="#{nav.product.update}">termék módosítás </span></a>
+                    <a th:href="@{../product/delete}" target="_self"><span th:text="#{nav.product.delete}">termék törlés </span></a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-sm-2">
-        <div class="pallet" ><span  th:text="#{nav.pallet}"></span>
-            <div class="palletstuff">
-                <a th:href="@{../inflow}" target="_self"><span  th:text="#{nav.pallet.insert}"></span></a>
-                <a th:text="#{nav.pallet.delete}"> </a>
+        <div class="col-sm-2">
+            <div class="shelf"><span th:text="#{nav.shelf}"></span>
+                <div class="shelfstuff">
+                    <a th:href="@{insert}" target="_self"><span th:text="#{nav.shelf.insert}"></span></a>
+                    <a th:href="@{update}" target="_self"><span th:text="#{nav.shelf.update}"></span></a>
+                    <a th:href="@{delete}" target="_self"><span th:text="#{nav.shelf.delete}"></span></a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-sm-2">
-        <div class="nav"><a th:href="@{../statics}"><span  th:text="#{nav.statics}"></span></a></div>
-    </div>
-</nav>
+        <div class="col-sm-2">
+            <div class="pallet"><span th:text="#{nav.pallet}"></span>
+                <div class="palletstuff">
+                    <a th:href="@{~/inflow}" target="_self"><span th:text="#{nav.pallet.insert}"></span></a>
+                </div>
+            </div>
+        </div>
 
+        <div class="col-sm-2">
+            <div class="nav"><a th:href="@{../statics}"><span th:text="#{nav.statics}"></span></a></div>
+        </div>
+    </nav>
 </div>
 <div class=".container">
     <h1 th:text="#{management.shelf.h1}"></h1>

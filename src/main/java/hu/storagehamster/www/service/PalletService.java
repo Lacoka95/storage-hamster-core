@@ -11,6 +11,7 @@ public class PalletService {
 	PalletReposirory palletReposirory;
 
 	public void save(Pallet pallet) {
+
 		palletReposirory.saveAndFlush(pallet);
 	}
 

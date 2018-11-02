@@ -7,14 +7,15 @@ public class Pallet {
 	@Id
 	@GeneratedValue
 	private long id;
-	private int quantity;
+
+	private int numberOfProductsOnPallet;
 
 	@ManyToOne
 	@JoinColumn(name = "PRODUCT_ID")
 	private Product product;
 
-	public Pallet(int quantity, Product product) {
-		this.quantity = quantity;
+	public Pallet(int numberOfProductsOnPallet, Product product) {
+		this.numberOfProductsOnPallet = numberOfProductsOnPallet;
 		this.product = product;
 	}
 
@@ -29,12 +30,12 @@ public class Pallet {
 		this.id = id;
 	}
 
-	public int getQuantity() {
-		return quantity;
+	public int getNumberOfProductsOnPallet() {
+		return numberOfProductsOnPallet;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setNumberOfProductsOnPallet(int numberOfProductsOnPallet) {
+		this.numberOfProductsOnPallet = numberOfProductsOnPallet;
 	}
 
 	public Product getProduct() {
@@ -49,7 +50,7 @@ public class Pallet {
 	public String toString() {
 		return "Pallet{" +
 						"id=" + id +
-						", quantity=" + quantity +
+						", numberOfProductsOnPallet=" + numberOfProductsOnPallet +
 						", product=" + product +
 						'}';
 	}
