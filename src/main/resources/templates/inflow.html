@@ -41,6 +41,7 @@
             <div class="pallet"><span th:text="#{nav.pallet}"></span>
                 <div class="palletstuff">
                     <a th:href="@{~/inflow}" target="_self"><span th:text="#{nav.pallet.insert}"></span></a>
+                    <a th:href="@{~/outflow}" target="_self"><span th:text="#{nav.pallet.out}"></span></a>
                 </div>
             </div>
         </div>
@@ -70,7 +71,7 @@
                 </select>
         </div>
         <div class="form-group">
-            <label th:text="#{inflow.label3}">a raklapon lévő termék mennyiség</label>
+            <label th:text="#{inflow.label4}">a raklapon lévő termék mennyiség</label>
             <input type="number" th:field="*{numberOfPallets}" class="form-control" th:placeholder="#{placeholder.numberOfProductsOnPallet}">
         </div>
         <div class="form-group">
@@ -78,7 +79,7 @@
             <input type="number" th:field="*{numberOfProductsOnPallet}" class="form-control" th:placeholder="#{placeholder.numberOfProductsOnPallet}">
         </div>
         <div class="fromErrorMessage" th:if="${#fields.hasErrors('global')}" th:errors="global"> error message</div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default" th:text="#{submit.btn}">Submit</button>
     </form>
 
 </div>

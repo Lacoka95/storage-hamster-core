@@ -1,10 +1,8 @@
 package hu.storagehamster.www.entity;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -14,7 +12,7 @@ public class Shelf {
 	private String loco;
 	@NotNull
 	private int capacity;
-	@OneToMany
+	@OneToMany(cascade = {CascadeType.ALL})
 	@JoinColumn(name = "SHELF_ID")
 	private List<Pallet> stroredPallets;
 

@@ -143,3 +143,6 @@ text-decoration :none;
     padding: 120px,80px;
     background-color: #bab39a;
  }
+#duplicate {
+    float: right;
+}

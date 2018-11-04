@@ -7,14 +7,14 @@ import hu.storagehamster.www.entity.Product;
 import hu.storagehamster.www.entity.Shelf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.IntStream;
 
 @Service
 public class InflowHandler {
-
-
+	
 	private final ProductService productService;
 	private final ShelfService shelfService;
 	private final PalletService palletService;
@@ -30,16 +30,14 @@ public class InflowHandler {
 		Shelf shelf = shelfService.findByLoco(inflow.getShelfId());
 		Product product = productService.findById(inflow.getProductId());
 
-		IntStream.rangeClosed(0, inflow.getNumberOfPallets())
+		IntStream.rangeClosed(1, inflow.getNumberOfPallets())
 						.forEach(i -> storeShelf(inflow, shelf, product));
 	}
 
 	public void storeShelf(Inflow inflow, Shelf shelf, Product product) {
 		Pallet pallet = new Pallet(inflow.getNumberOfProductsOnPallet(), product);
-		palletService.save(pallet);
-
-		shelfService.storePallet(pallet, shelf);
 		shelfService.save(shelf);
+		shelfService.storePallet(pallet, shelf);
 	}
 
 	public List<Product> findAllProduct() {

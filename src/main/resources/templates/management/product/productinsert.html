@@ -46,6 +46,7 @@
             <div class="pallet"><span th:text="#{nav.pallet}"></span>
                 <div class="palletstuff">
                     <a th:href="@{~/inflow}" target="_self"><span th:text="#{nav.pallet.insert}"></span></a>
+                    <a th:href="@{~/outflow}" target="_self"><span th:text="#{nav.pallet.out}"></span></a>
                 </div>
             </div>
         </div>
@@ -82,7 +83,7 @@
             <input type="number" th:field="*{price}" class="form-control" th:placeholder="#{placeholder.price}">
         </div>
         <div class="fromErrorMessage" th:if="${#fields.hasErrors('global')}" th:errors="global"> error message</div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default" th:text="#{submit.btn}">Submit</button>
     </form>
 
 </div>
