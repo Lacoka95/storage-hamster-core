@@ -2,16 +2,16 @@ package hu.storagehamster.www.entity;
 
 public class Inflow {
 
-	private int id;
 	private String shelfId;
 	private long productId;
 	private int numberOfProductsOnPallet;
 	private int numberOfPallets;
 
-	public Inflow(String shelfId, long productId, int numberOfProductsOnPallet) {
+	public Inflow(String shelfId, long productId, int numberOfProductsOnPallet, int numberOfPallets) {
 		this.shelfId = shelfId;
 		this.productId = productId;
 		this.numberOfProductsOnPallet = numberOfProductsOnPallet;
+		this.numberOfPallets = numberOfPallets;
 	}
 
 	public Inflow() {
@@ -52,7 +52,6 @@ public class Inflow {
 	@Override
 	public String toString() {
 		return "Inflow{" +
-						"id=" + id +
 						", shelfId='" + shelfId + '\'' +
 						", productId=" + productId +
 						", numberOfProductsOnPallet=" + numberOfProductsOnPallet +

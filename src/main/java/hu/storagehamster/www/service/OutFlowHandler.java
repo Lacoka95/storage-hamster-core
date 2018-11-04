@@ -23,18 +23,6 @@ public class OutFlowHandler {
 		this.palletService = palletService;
 	}
 
-	public List<Product> findAllProducts() {
-		return productService.findall();
-	}
-
-	public List<Pallet> queryTopNById(Outflow outflow)  {
-		PageRequest request = PageRequest.of(0, outflow.getQuantity());
-		Page<Pallet> pallets = palletService.findByproduct_id(outflow.getProductID(), request);
-		return pallets.getContent();
-	}
-	public void deletePallets(List<Pallet> pallets){
-		palletService.deletePallets(pallets);
-	}
 	@Transactional
 	public void handleOutflow(OutflowWrapper outflowWrapper){
 
@@ -42,5 +30,20 @@ public class OutFlowHandler {
 						.stream()
 						.map(this::queryTopNById)
 						.forEach(this::deletePallets);
+	}
+
+	public List<Product> findAllProducts() {
+		return productService.findall();
+	}
+
+	private List<Pallet> queryTopNById(Outflow outflow) {
+
+		PageRequest request = PageRequest.of(0, outflow.getQuantity());
+		Page<Pallet> pallets = palletService.findByproduct_id(outflow.getProductID(), request);
+		return pallets.getContent();
+	}
+
+	private void deletePallets(List<Pallet> pallets){
+		palletService.deletePallets(pallets);
 	}
 }

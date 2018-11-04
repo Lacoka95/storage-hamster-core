@@ -17,13 +17,11 @@ public class InflowHandler {
 	
 	private final ProductService productService;
 	private final ShelfService shelfService;
-	private final PalletService palletService;
 
 	@Autowired
-	public InflowHandler(ProductService productService, ShelfService shelfService, PalletService palletService) {
+	public InflowHandler(ProductService productService, ShelfService shelfService){
 		this.productService = productService;
 		this.shelfService = shelfService;
-		this.palletService = palletService;
 	}
 
 	public void handleInflow(Inflow inflow) throws ShelfOutOfCapacityException {
@@ -34,10 +32,10 @@ public class InflowHandler {
 						.forEach(i -> storeShelf(inflow, shelf, product));
 	}
 
-	public void storeShelf(Inflow inflow, Shelf shelf, Product product) {
+	private void storeShelf(Inflow inflow, Shelf shelf, Product product) {
 		Pallet pallet = new Pallet(inflow.getNumberOfProductsOnPallet(), product);
-		shelfService.save(shelf);
 		shelfService.storePallet(pallet, shelf);
+		shelfService.save(shelf);
 	}
 
 	public List<Product> findAllProduct() {
