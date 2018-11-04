@@ -29,7 +29,8 @@ public class PalletService {
 		}
 		return pallets;
 	}
-	public void deletePallets(List<Pallet> pallets){
+
+	public void deletePallets(List<Pallet> pallets) {
 		palletReposirory.deleteInBatch(pallets);
 	}
 }

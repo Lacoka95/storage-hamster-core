@@ -24,7 +24,7 @@ public class OutFlowHandler {
 	}
 
 	@Transactional
-	public void handleOutflow(OutflowWrapper outflowWrapper){
+	public void handleOutflow(OutflowWrapper outflowWrapper) {
 
 		outflowWrapper.getOutflows()
 						.stream()
@@ -43,7 +43,7 @@ public class OutFlowHandler {
 		return pallets.getContent();
 	}
 
-	private void deletePallets(List<Pallet> pallets){
+	private void deletePallets(List<Pallet> pallets) {
 		palletService.deletePallets(pallets);
 	}
 }

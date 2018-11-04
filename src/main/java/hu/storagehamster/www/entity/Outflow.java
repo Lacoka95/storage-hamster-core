@@ -2,7 +2,6 @@ package hu.storagehamster.www.entity;
 
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
 public class Outflow {
 	@Min(value = 1)

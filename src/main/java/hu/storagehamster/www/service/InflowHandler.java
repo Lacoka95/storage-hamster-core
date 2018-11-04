@@ -7,19 +7,18 @@ import hu.storagehamster.www.entity.Product;
 import hu.storagehamster.www.entity.Shelf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.IntStream;
 
 @Service
 public class InflowHandler {
-	
+
 	private final ProductService productService;
 	private final ShelfService shelfService;
 
 	@Autowired
-	public InflowHandler(ProductService productService, ShelfService shelfService){
+	public InflowHandler(ProductService productService, ShelfService shelfService) {
 		this.productService = productService;
 		this.shelfService = shelfService;
 	}

@@ -34,9 +34,9 @@ public class ShelfService {
 		if (shelf.getCapacity() >= 1) {
 			shelf.addPallet(pallet);
 			shelf.setCapacity(shelf.getCapacity() - 1);
+
 		} else {
 			throw new ShelfOutOfCapacityException("shelf has no more free space");
 		}
 	}
-
 }

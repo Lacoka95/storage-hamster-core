@@ -82,13 +82,7 @@ public class ProductController {
 	@PostMapping("/delete")
 	public String deleteProductFromDB(@ModelAttribute("productForm") Product product) {
 		productService.deleteById(product.getId());
-		return "management/product/productdelete";
 
+		return "management/product/productdelete";
 	}
-//	@ExceptionHandler(DataIntegrityViolationException.class)
-//	public String handleDuplicateException(Model model){
-//		model.addAttribute("productFrom");
-//
-//		return "management/product/productinsert";
-//	}
 }
